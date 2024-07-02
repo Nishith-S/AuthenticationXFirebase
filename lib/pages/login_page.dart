@@ -11,7 +11,7 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
-  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void signUserIn() {}
@@ -49,8 +49,8 @@ class _LogInPageState extends State<LogInPage> {
                   height: 25,
                 ),
                 MyTextField(
-                  controller: _userNameController,
-                  hintText: 'User Name',
+                  controller: _emailController,
+                  hintText: 'Email',
                   obscureText: false,
                 ),
 
