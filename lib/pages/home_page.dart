@@ -22,17 +22,33 @@ class _HomePageState extends State<HomePage> {
         elevation: 2,
         backgroundColor: Colors.black87,
         centerTitle: true,
-        title: Text("Authentication x FireBase", style: TextStyle(color: Colors.grey.shade200),),
+        title: Text(
+          "Authentication x FireBase",
+          style: TextStyle(color: Colors.grey.shade200),
+        ),
         actions: [
           IconButton(
             tooltip: "sign out",
             onPressed: signUserOut,
-            icon: Icon(Icons.logout_outlined, color: Colors.grey.shade200,),
+            icon: Icon(
+              Icons.logout_outlined,
+              color: Colors.grey.shade200,
+            ),
           ),
         ],
       ),
       body: Center(
-        child: Text("Logged in as: ${user?.email}", style: const TextStyle(fontSize: 18),),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network("https://www.gstatic.com/mobilesdk/240501_mobilesdk/firebase_28dp.png"),
+            const SizedBox(height: 25,),
+            Text(
+              "Logged in as: ${user?.email}",
+              style: const TextStyle(fontSize: 18),
+            ),
+          ],
+        ),
       ),
     );
   }
