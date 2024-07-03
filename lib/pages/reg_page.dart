@@ -70,6 +70,16 @@ class _RegisterPageState extends State<RegistrationPage> {
     }
   }
 
+  //google sign-in
+  void _handelGoogleSignIn() async {
+    try {
+      GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
+      await FirebaseAuth.instance.signInWithProvider(googleAuthProvider);
+    } catch(e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,16 +195,19 @@ class _RegisterPageState extends State<RegistrationPage> {
                 const SizedBox(
                   height: 65,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SquareTile(
+                      message: "Sign up with google",
+                      onTap: _handelGoogleSignIn,
                       imagePath: 'assets/images/google.png',
                     ),
-                    SizedBox(width: 30,),
-                    SquareTile(
-                      imagePath: 'assets/images/apple.png',
-                    ),
+                    // const SizedBox(width: 30,),
+                    // SquareTile(
+                    //   onTap: () {},
+                    //   imagePath: 'assets/images/twitter.png',
+                    // ),
                   ],
                 ),
 
